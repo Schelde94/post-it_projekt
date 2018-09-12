@@ -1,0 +1,236 @@
+@charset "utf-8";
+/* CSS Document */
+/* START CSS-RESET */
+* {
+	margin: 0;
+	padding: 0;
+
+	/* With these codes padding and border does not increase it's width and gives intuitive style.*/
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* END CSS-RESET */
+body{
+/*	background-repeat: no-repeat;*/
+	font-family: 'Shadows Into Light', cursive;
+	font-family: 'Exo', sans-serif;
+	font-family: 'Ubuntu Condensed', sans-serif;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+
+/*Opret kasse*/
+
+.opret-kasse{
+	align-content: center;
+	width: 200px;
+	height: 250px;
+	background: linear-gradient(0deg, #E1E719, #D7E16B);
+	border-radius: 10px;
+	box-shadow: 4px 6px 10px -4px black;
+	margin-top: 15%;
+	margin-left: 10%;
+	
+}
+
+.tekstbox{
+	margin-left: 40px;
+	border-radius: 5px;
+	max-width: 75%;
+	box-shadow: 2px 3px 5px -2px black;
+	font-family: 'Shadows Into Light', cursive;
+	font-family: 'Exo', sans-serif;
+	font-family: 'Ubuntu Condensed', sans-serif;
+	
+	
+}
+
+.farveboks{
+	border-radius: 5px;
+	margin-left: 40px;
+	box-shadow: 2px 3px 5px -2px black;
+	
+}
+
+.opret-knap{
+	border-radius: 5px;
+	padding-right: 18px;
+	font-family: 'Shadows Into Light', cursive;
+	font-family: 'Exo', sans-serif;
+	font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+h3{
+	
+	padding-top: 25px;
+	margin-left: 40px;
+	
+}
+
+/*Opret kasse slut*/
+
+
+/*poster kassen*/
+
+/*.poster-baggrund{
+	background-image: url(" pic/baggrund.png");
+	width: 1200px;
+	height: 800px;
+	margin-left: 20%;
+	margin-top: 600px;
+	/*position: absolute;*/
+/*	display: flex;
+	flex-wrap: row wrap;*/
+
+
+
+.poster-kasse{
+	background-image: url(" pic/sdf.png");
+	background-repeat:no-repeat;
+	background-position:center;
+	margin-left: 5%;
+	width: 70%;
+/*	max-width: 1200px;*/
+	height: 900px;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 150px;
+	padding-left: 200px;
+
+}
+
+
+.postityellow{
+	width: 200px;
+	height: 200px;
+	background: linear-gradient(135deg, #E1E719, #D7E16B);
+	border-bottom-right-radius: 130px 9px;
+	transform: rotate(2deg);
+	box-shadow: 2px 3px 5px -4px black;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+/*poster rod*/
+.postitred{
+	width: 200px;
+	height: 200px;
+	background: linear-gradient(135deg, #EB4C65, #EB8E9C);
+	border-bottom-right-radius: 130px 9px;
+	transform: rotate(4deg);
+	box-shadow: 2px 3px 5px -4px black;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+/*poster gron*/
+.postitgreen{
+	width: 200px;
+	height: 200px;
+	background: linear-gradient(135deg, #57E95F, #97EC9B);
+	border-bottom-right-radius: 130px 9px;
+	transform: rotate(-1deg);
+	box-shadow: 2px 3px 5px -4px black;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+/*poster blaa*/
+.postitblue{
+	width: 200px;
+	height: 200px;
+	background: linear-gradient(135deg, #2277EB, #73A7ED);
+	border-bottom-right-radius: 130px 9px;
+	transform: rotate(-3deg);
+	box-shadow: 2px 3px 5px -4px black;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+.overskrift{
+	margin-left: 10px;
+	font-size: 25px;
+}
+.tekst{
+	margin-left: 10px;
+	width: 180px;
+	height: 100px;
+
+}
+
+.dato{
+	margin-top: 0px;
+	text-align: center;
+	font-size: 10px;
+}
+
+.slet-poster{
+	margin-top: 5px;
+	margin-left: 180px;
+}
+.opret-knap2{
+	border-radius: 5px;
+	font-family: 'Shadows Into Light', cursive;
+	font-family: 'Exo', sans-serif;
+	font-family: 'Ubuntu Condensed', sans-serif;
+	padding-right: 5px;
+	margin-left: 25px;
+}
+
+.zoom {
+    padding-left: 20px;
+    transition: transform .2s; /* Animation */
+}
+
+.zoom:hover {
+    transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+@media only screen and (max-width: 400px) {
+    body {
+        background-color: #FFFFFF;
+		font-family: 'Shadows Into Light', cursive;
+		font-family: 'Exo', sans-serif;
+		font-family: 'Ubuntu Condensed', sans-serif;
+		display: flex;
+		flex-wrap: wrap;
+		
+    }
+	
+	.opret-kasse{
+	align-content: center;
+	max-width: 200px;
+	max-height: 450px;
+	background: linear-gradient(0deg, #E1E719, #D7E16B);
+	border-radius: 10px;
+	box-shadow: 4px 6px 10px -4px black;
+	margin-top: 10%;
+	margin-left: 20%;
+	
+}
+	.poster-kasse{
+	background-image: url(" pic/hvid.png");
+	background-repeat:no-repeat;
+	background-position:center;
+	margin-top: 1%;
+	width: 70%;
+	height: 900px;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 150px;
+	padding-left: 30px;
+
+}
+	.zoom {
+    padding-left: 20px;
+    transition: transform .2s; /* Animation */
+}
+
+.zoom:hover {
+    transform: scale(1.0); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+	
+}
