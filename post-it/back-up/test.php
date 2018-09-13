@@ -26,80 +26,16 @@ require_once('util.php');
     <hr class="my-4">
     <p>Press button below to either make a new post-it or register.</p>
 	<!-- Button trigger modal -->
-	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal" id="modal-windows-one">Add Post-It</button>
-	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#testModal" id="modal-windows-two">Profile</button>
-  </div>	
-			
-</div>
-<div class="container">
-  <div class="row text-center">
-    <div class="col-lg-6 offset-lg-3">See all post-it notes below. <br>
-      <strong>Login</strong> to see the private notes.</div>
+	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal" id="addbtn">Add Post-It</button>
+	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#testModal" id="loginbtn">Login/Register</button>
   </div>
-</div>
-  <br>
-  <hr>
-  <br>
-  <div class="container-fluid">
-	<!--Posters kasse-->  
-		<div class="row justify-content-center">
-				<?php 
-					require_once('dbcon.php');
-					$sql = 'SELECT postit.id, createdate, headertext, bodytext, users.id AS uid, cssclass, username FROM postit, color, users WHERE color_id=color.id AND users_id=users.id;';
-
-					$stmt = $link->prepare($sql);
-					$stmt->execute();
-					$stmt->bind_result($pid, $createdate, $htext, $btext, $uid, $cssclass, $username);
-
-					while($stmt->fetch()){ ?>
-			
-					<div class="card postit>">
-			  			<div class="card-body zoom">
-							<div class="<?=$cssclass?>">
-								
-								<?php if($_SESSION['uid']==$uid){?>
-								<form action="dodeletepostit.php" method="post" >
-									<input type="hidden" name="pid" value="<?=$pid?>">
-									<input type="image" src="pic/lillex.png" alt="Delete" class="slet-poster">
-								</form>		
-								<?php } ?>
-								
-								<p class="overskrift"><?=$htext?></p>
-								<p class="tekst"><?=$btext?></p>
-								<p class="author"><?=$username?></p>
-								<p class="dato"><?=$createdate?></p>
-							</div>
-						</div>
-					</div>
-				<?php	
-				} ?>
-  		</div>
-	<!--Posters kasse slut-->
-  <br>
-  <hr>
-  <div class="row">
-    <div class="text-center col-lg-6 offset-lg-3">
-      <h4>Your Post-It Wall </h4>
-      <p>Copyright &copy; 2018 &middot; All Rights Reserved &middot; <a href="#" >PMS</a></p>
-    </div>
-  </div>
-</div>
-
 	
-<script src="https://code.jquery.com/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/popper.min.js" integrity="sha256-y/AvPAh9ai9k7R7EAGl8LCdqr1r+xYsmBoBMaYwpQFk=" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-<!-- custom script) --> 	
-<script src="js/customjs.js"></script>
-
-
-	
-<!-- Login Modal  Modal -->
+<!-- Add post-it Modal -->
 <div class="modal fade" id="testModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Profile</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Add Post-It</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -132,8 +68,6 @@ require_once('util.php');
 			// ignore
 	}
 ?>
-	  
-		  
 <form action="<?=$_SERVER['PHP_SELF']?>" method="post">	
 	<fieldset>
 <?php
@@ -156,8 +90,8 @@ require_once('util.php');
     </div>
   </div>
 </div>	
-<!-- Login Modal END -->	
-<!-- Add post it Modal -->
+<!-- Add post-it Modal END -->	
+<!-- Login Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -172,6 +106,7 @@ require_once('util.php');
 	<h1>Create new PostIt</h1>
 	
 	<form action="docreatepostit.php" method="post">
+		<input type="text" name="author" placeholder="Forfatternavn" class="textbox">
 		<input type="text" name="headertext" placeholder="Overskrift" class="textbox">
 		<input type="text" name="bodytext" placeholder="Brødtekst" class="textbox">
 		
@@ -200,6 +135,70 @@ require_once('util.php');
     </div>
   </div>
 </div>
-<!-- Add post it END -->
+<!-- Login Modal END -->
+			
+</div>
+<div class="container">
+  <div class="row text-center">
+    <div class="col-lg-6 offset-lg-3">See all post-it notes below. <br>
+      <strong>Login</strong> to see the private notes.</div>
+  </div>
+</div>
+  <br>
+  <hr>
+  <br>
+  <div class="container-fluid">
+	<!--Posters kasse-->  
+		<div class="row justify-content-center">
+				<?php 
+					require_once('dbcon.php');
+					$sql = 'SELECT postit.id, createdate, author, headertext, bodytext, cssclass FROM postit, color WHERE color_id=color.id';
+
+					$stmt = $link->prepare($sql);
+					$stmt->execute();
+					$stmt->bind_result($pid, $createdate, $author, $htext, $btext, $cssclass);
+
+					while($stmt->fetch()){ ?>	
+					<div class="card postit>">
+			  			<div class="card-body zoom">
+							<div class="<?=$cssclass?>">
+								<form action="dodeletepostit.php" method="post" >
+									<input type="hidden" name="pid" value="<?=$pid?>">
+									<input type="image" src="pic/lillex.png" alt="Delete" class="slet-poster">
+								</form>		
+								<p class="overskrift"><?=$htext?></p>
+								<p class="tekst"><?=$btext?></p>
+								<p class="author"><?=$author?></p>
+								<p class="dato"><?=$createdate?></p>
+							</div>
+						</div>
+					</div>
+				<?php	
+				} ?>
+  		</div>
+	<!--Posters kasse slut-->
+  <br>
+  <hr>
+  <div class="row">
+    <div class="text-center col-lg-6 offset-lg-3">
+      <h4>Your Post-It Wall </h4>
+      <p>Copyright &copy; 2018 &middot; All Rights Reserved &middot; <a href="#" >PMS</a></p>
+    </div>
+  </div>
+</div>
+	
+<script src="https://code.jquery.com/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/popper.min.js" integrity="sha256-y/AvPAh9ai9k7R7EAGl8LCdqr1r+xYsmBoBMaYwpQFk=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<!-- custom script) --> 	
+<script src="js/customjs.js"></script>
+<script>
+$(document).ready(function(){
+    $("#myBtn").click(function(){
+        $("#myModal").modal("toggle");
+    });
+});
+</script>
+
 </body>
 </html>

@@ -45,28 +45,23 @@ require_once('util.php');
 		<div class="row justify-content-center">
 				<?php 
 					require_once('dbcon.php');
-					$sql = 'SELECT postit.id, createdate, headertext, bodytext, users.id AS uid, cssclass, username FROM postit, color, users WHERE color_id=color.id AND users_id=users.id;';
+					$sql = 'SELECT postit.id, createdate, author, headertext, bodytext, cssclass FROM postit, color WHERE color_id=color.id';
 
 					$stmt = $link->prepare($sql);
 					$stmt->execute();
-					$stmt->bind_result($pid, $createdate, $htext, $btext, $uid, $cssclass, $username);
+					$stmt->bind_result($pid, $createdate, $author, $htext, $btext, $cssclass);
 
-					while($stmt->fetch()){ ?>
-			
+					while($stmt->fetch()){ ?>	
 					<div class="card postit>">
 			  			<div class="card-body zoom">
 							<div class="<?=$cssclass?>">
-								
-								<?php if($_SESSION['uid']==$uid){?>
 								<form action="dodeletepostit.php" method="post" >
 									<input type="hidden" name="pid" value="<?=$pid?>">
 									<input type="image" src="pic/lillex.png" alt="Delete" class="slet-poster">
 								</form>		
-								<?php } ?>
-								
 								<p class="overskrift"><?=$htext?></p>
 								<p class="tekst"><?=$btext?></p>
-								<p class="author"><?=$username?></p>
+								<p class="author"><?=$author?></p>
 								<p class="dato"><?=$createdate?></p>
 							</div>
 						</div>
@@ -172,6 +167,7 @@ require_once('util.php');
 	<h1>Create new PostIt</h1>
 	
 	<form action="docreatepostit.php" method="post">
+		<input type="text" name="author" placeholder="Forfatternavn" class="textbox">
 		<input type="text" name="headertext" placeholder="Overskrift" class="textbox">
 		<input type="text" name="bodytext" placeholder="Brødtekst" class="textbox">
 		

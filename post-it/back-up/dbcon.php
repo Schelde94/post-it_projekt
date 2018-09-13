@@ -2,7 +2,7 @@
 $DB_HOST = 'localhost';
 $DB_USER = 'root';
 $DB_PASS = 'root';
-$DB_NAME = 'pms';
+$DB_NAME = 'mul18';
 // $DB_PORT = '8889';
 
 $link = new mysqli($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);

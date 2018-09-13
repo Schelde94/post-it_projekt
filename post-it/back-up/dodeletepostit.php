@@ -1,4 +1,4 @@
-<?php header("location: index.php") ?>
+<?php header("location: test.php") ?>
 <!doctype html>
 <html>
 <head>
@@ -24,7 +24,7 @@
 	
 ?>
 	
-		<a href="index.php">View the PostIt board</a>
+		<a href="test.php">View the PostIt board</a>
 
 </body>
 </html>

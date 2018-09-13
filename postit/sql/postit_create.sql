@@ -35,7 +35,6 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `mul18`.`postit` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `createdate` DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
-  `author` VARCHAR(45) NULL,
   `headertext` VARCHAR(45) NULL,
   `bodytext` VARCHAR(100) NULL,
   `color_id` INT NOT NULL,
@@ -63,9 +62,9 @@ INSERT INTO color (colorname, cssclass) VALUES ('Blue', 'postitblue');
 
 -- Add a few test PostIt's
 INSERT INTO postit (author, headertext, bodytext, color_id) 
-VALUES ('Torben', 'Husk', 'Databaser er vigtige!!!', 3);
+VALUES ('Husk', 'Databaser er vigtige!!!', 3);
 INSERT INTO postit (author, headertext, bodytext, color_id) 
-VALUES ('Morten', 'Interface', 'Intet interface - ingen brugere', 2);
+VALUES ('Interface', 'Intet interface - ingen brugere', 2);
 
 
 SELECT * FROM color;
