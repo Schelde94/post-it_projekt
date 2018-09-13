@@ -1,59 +1,5 @@
 @charset "utf-8";
 /* CSS Document */
-			
-body {
-	display: flex;
-	flex-wrap: wrap;
-}
-/**/.postit {
-	margin: 20px;
-	width: 300px;
-	max-height: 300px;
-	padding: 15px;
-	box-shadow: 2px 3px 5px -2px black;
-	transform: rotate(-3deg);
-	font-family: 'Indie Flower', cursive;
-}
-
-.card {
-	border: none;
-}
-
-h2 {
-	margin-bottom: 10px;
-}
-.name {
-	position: absolute;
-	bottom: 5px;
-}
-time {
-	text-align: right;
-	display: block;
-	float: right;
-}
-.btn {
-	padding-bottom: 5px;
-}
-.card-columns {
- @include media-breakpoint-only(lg) {
- column-count: 4;
-}
- @include media-breakpoint-only(xl) {
- column-count: 5;
-}
-}
- @include media-breakpoint-only(sm) {
- column-count: 2;
-}
-}
- @include media-breakpoint-only(md) {
- column-count: 3;
-}
-}
-
-
-/* Peters css*/
-/* CSS Document */
 /* START CSS-RESET */
 * {
 	margin: 0;
@@ -68,9 +14,11 @@ time {
 /* END CSS-RESET */
 body{
 /*	background-repeat: no-repeat;*/
+	font-family: 'Shadows Into Light', cursive;
+	font-family: 'Exo', sans-serif;
+	font-family: 'Ubuntu Condensed', sans-serif;
 	display: flex;
 	flex-wrap: wrap;
-	font-family: 'Indie Flower', cursive;
 }
 
 
@@ -160,50 +108,46 @@ h3{
 	width: 300px;
 	height: 300px;
 	padding: 15px;
-	background: linear-gradient(135deg, rgba(70,234,255,1.00), rgba(194,248,255,1.00));
-	transform: rotate(3deg);
-	border-bottom-right-radius: 100px 10px;
-	box-shadow: 2px 3px 5px -2px black;
-	border: none;
+	background: linear-gradient(135deg, #E1E719, #D7E16B);
+	border-bottom-right-radius: 130px 9px;
+	transform: rotate(2deg);
+	box-shadow: 2px 3px 5px -4px black;
 }
 
 /*poster rod*/
 .postitred{
-	margin: 20px;
-	width: 300px;
-	height: 300px;
-	padding: 15px;
+	width: 200px;
+	height: 200px;
 	background: linear-gradient(135deg, #EB4C65, #EB8E9C);
 	border-bottom-right-radius: 130px 9px;
 	transform: rotate(4deg);
 	box-shadow: 2px 3px 5px -4px black;
-	
+	margin-left: 10px;
+	margin-top: 10px;
 }
 
 /*poster gron*/
 .postitgreen{
-	margin: 20px;
-	width: 300px;
-	height: 300px;
-	padding: 15px;
+	width: 200px;
+	height: 200px;
 	background: linear-gradient(135deg, #57E95F, #97EC9B);
 	border-bottom-right-radius: 130px 9px;
 	transform: rotate(-1deg);
 	box-shadow: 2px 3px 5px -4px black;
-
+	margin-left: 10px;
+	margin-top: 10px;
 }
 
 /*poster blaa*/
 .postitblue{
-	margin: 20px;
-	width: 300px;
-	height: 300px;
-	padding: 15px;
+	width: 200px;
+	height: 200px;
 	background: linear-gradient(135deg, #2277EB, #73A7ED);
 	border-bottom-right-radius: 130px 9px;
 	transform: rotate(-3deg);
 	box-shadow: 2px 3px 5px -4px black;
-	
+	margin-left: 10px;
+	margin-top: 10px;
 }
 
 .overskrift{
@@ -218,25 +162,14 @@ h3{
 }
 
 .dato{
+	margin-top: 0px;
 	text-align: center;
-	font-size: 12px;
-	font-weight: 600;
-	font-family: 'Shadows Into Light', cursive;
-	font-family: 'Exo', sans-serif;
-	font-family: 'Ubuntu Condensed', sans-serif;
-}
-
-.author {
-	margin-top: 50px;
-	text-align: center;
-	font-size: 12px;
-	font-weight: 600;
-	
+	font-size: 10px;
 }
 
 .slet-poster{
 	margin-top: 5px;
-	margin-left: 95%;	
+	margin-left: 180px;
 }
 .opret-knap2{
 	border-radius: 5px;
