@@ -39,6 +39,10 @@
     cursor: pointer;
 }
 
+body.modal-open div.modal-backdrop {
+	z-index: 0;
+}
+
 /* Post It System */
 body {
 	font-family: 'Indie Flower', cursive;

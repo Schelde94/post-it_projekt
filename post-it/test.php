@@ -191,7 +191,7 @@ require_once('util.php');
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/popper.min.js" integrity="sha256-y/AvPAh9ai9k7R7EAGl8LCdqr1r+xYsmBoBMaYwpQFk=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <!-- custom script) --> 	
-<script src="customjs.js"></script>
+<script src="js/customjs.js"></script>
 <script>
 $(document).ready(function(){
     $("#myBtn").click(function(){
