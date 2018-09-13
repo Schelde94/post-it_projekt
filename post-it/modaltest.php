@@ -1,29 +1,32 @@
-<?php
-session_start();
-require_once('util.php');
-?>
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Untitled Document</title>
- <link href="../post-it/css/bootstrap-4.0.0.css" rel="stylesheet">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
-
 <body>
-<!-- Add post-it Modal -->
-<div class="modal fade" id="testModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add Post-It</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <?php 
+
+<div class="container mt-3">
+  <h2>Modal Methods</h2>
+  <p>The <strong>toggle</strong> method toggles the modal manually.</p>
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-primary" id="myBtn">Toggle Modal</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Methods</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <?php 
 	$cmd = $_POST['cmd'] ?? null;
 	
 	switch ($cmd){
@@ -63,67 +66,23 @@ require_once('util.php');
 		<button type="submit" name="cmd" value="login">Login</button>
 		<button type="submit" name="cmd" value="createuser">Create</button>
 <?php } ?>
-	</fieldset>	
-</form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
+      
     </div>
   </div>
-</div>	
-	
-	
-<!-- Login Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add Post-It</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-       <div class="opret-kasse">
-	<h1>Create new PostIt</h1>
-	
-	<form action="docreatepostit.php" method="post">
-		<input type="text" name="author" placeholder="Forfatternavn" class="textbox">
-		<input type="text" name="headertext" placeholder="Overskrift" class="textbox">
-		<input type="text" name="bodytext" placeholder="Brødtekst" class="textbox">
-		
-		Farve:
-		<select name="colorid" required class="farveboks">
-		<?php
-			require_once('dbcon.php');
-			$sql = 'SELECT id, colorname FROM color';
-			$stmt = $link->prepare($sql);
-			$stmt->execute();
-			$stmt->bind_result($cid, $cnam);
+</div>
+ 
+<script>
+$(document).ready(function(){
+    $("#myBtn").click(function(){
+        $("#myModal").modal("toggle");
+    });
+});
+</script>
 
-			while($stmt->fetch()){
-				echo '<option value="'.$cid.'">'.$cnam.'</option>'.PHP_EOL;
-			}
-		?>
-		</select>
-		<button type="submit" class="opret-knap">Opret</button><br>
-	</form></div>
-	</fieldset>	
-</form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>		
-	
-<script src="../post-it/js/jquery-3.2.1.min.js"></script> 
-
-<!-- Include all compiled plugins (below), or include individual files as needed --> 
-<script src="../post-it/js/popper.min.js"></script> 
-<script src="../post-it/js/bootstrap-4.0.0.js"></script>	
-<script src="customjs.js"></script>
 </body>
 </html>

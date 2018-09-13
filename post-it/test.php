@@ -11,10 +11,11 @@ require_once('util.php');
 <title>Bootstrap - Prebuilt Layout</title>
 
 <!-- Bootstrap -->
-<link href="css/bootstrap-4.0.0.css" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 <!-- Custom Styles -->
 <link href="css/styles.css" rel="stylesheet">
+	
 
 </head>
 <body>
@@ -25,8 +26,8 @@ require_once('util.php');
     <hr class="my-4">
     <p>Press button below to either make a new post-it or register.</p>
 	<!-- Button trigger modal -->
-	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal">Add Post-It</button>
-	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#testModal">Login/Register</button>
+	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal" id="addbtn">Add Post-It</button>
+	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#testModal" id="loginbtn">Login/Register</button>
   </div>
 	
 <!-- Add post-it Modal -->
@@ -186,14 +187,18 @@ require_once('util.php');
   </div>
 </div>
 	
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-<script src="js/jquery-3.2.1.min.js"></script> 
-
-<!-- Include all compiled plugins (below), or include individual files as needed --> 
-<script src="js/popper.min.js"></script> 
-<script src="js/bootstrap-4.0.0.js"></script>
+<script src="https://code.jquery.com/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/popper.min.js" integrity="sha256-y/AvPAh9ai9k7R7EAGl8LCdqr1r+xYsmBoBMaYwpQFk=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <!-- custom script) --> 	
 <script src="customjs.js"></script>
+<script>
+$(document).ready(function(){
+    $("#myBtn").click(function(){
+        $("#myModal").modal("toggle");
+    });
+});
+</script>
+
 </body>
 </html>
