@@ -1,58 +1,88 @@
+DROP TABLE IF EXISTS postit;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS color;
+
+
+
+
 -- MySQL Workbench Forward Engineering
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
-CREATE SCHEMA IF NOT EXISTS `pms` DEFAULT CHARACTER SET utf8 ;
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+-- -----------------------------------------------------
+-- Schema pms
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema pms
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `pms` DEFAULT CHARACTER SET latin1 ;
 USE `pms` ;
 
-DROP TABLE IF EXISTS users;
-DROP TABLE IF EXISTS color;
-DROP TABLE IF EXISTS postit;
+-- -----------------------------------------------------
+-- Table `pms`.`color`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `pms`.`color` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `colorname` VARCHAR(45) NULL DEFAULT NULL,
+  `cssclass` VARCHAR(45) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 6
+DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
 -- Table `pms`.`users`
 -- -----------------------------------------------------
-CREATE TABLE `pms`.`users` (
-	`id`INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    `username` VARCHAR(40) UNIQUE,
-    `pwhash` VARCHAR(255)
-)ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `pms`.`color`
--- -----------------------------------------------------
-CREATE TABLE `pms`.`color` (
-	`id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    `colorname` VARCHAR(45),
-    `cssclass` varchar(45)
-)ENGINE = InnoDB;
+CREATE TABLE IF NOT EXISTS `pms`.`users` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(40) NULL DEFAULT NULL,
+  `pwhash` VARCHAR(255) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `username` (`username` ASC) )
+ENGINE = InnoDB
+AUTO_INCREMENT = 2
+DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
 -- Table `pms`.`postit`
 -- -----------------------------------------------------
-CREATE TABLE `pms`.`postit` (
-	`id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    `createdate` DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
-    -- `author` VARCHAR(45) NULL,
-    `headertext` VARCHAR(45) NULL,
-    `bodytext` VARCHAR(100) NULL,
-    `color_id` INT NOT NULL,
-    INDEX `fk_postit_color_idx` (`color_id` ASC),
-    CONSTRAINT `fk_postit_color`
+CREATE TABLE IF NOT EXISTS `pms`.`postit` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `createdate` DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
+  `headertext` VARCHAR(45) NULL DEFAULT NULL,
+  `bodytext` VARCHAR(100) NULL DEFAULT NULL,
+  `color_id` INT(11) NOT NULL,
+  `users_id` INT(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_postit_color_idx` (`color_id` ASC) ,
+  INDEX `fk_postit_users1_idx` (`users_id` ASC) ,
+  CONSTRAINT `fk_postit_color`
     FOREIGN KEY (`color_id`)
     REFERENCES `pms`.`color` (`id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION
-)ENGINE = InnoDB;
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_postit_users1`
+    FOREIGN KEY (`users_id`)
+    REFERENCES `pms`.`users` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+AUTO_INCREMENT = 2
+DEFAULT CHARACTER SET = latin1;
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
 
 
 -- Add color info to the color table
@@ -60,12 +90,15 @@ INSERT INTO color (colorname, cssclass) VALUES ('Yellow', 'postityellow');
 INSERT INTO color (colorname, cssclass) VALUES ('Blue', 'postitblue');
 INSERT INTO color (colorname, cssclass) VALUES ('Green', 'postitgreen');
 INSERT INTO color (colorname, cssclass) VALUES ('Orange', 'postitorange');
+INSERT INTO color (colorname, cssclass) VALUES ('Pink', 'postitpink');
 
 
 SELECT * FROM color;
 SELECT * FROM postit;
 SELECT * FROM users;
 
+
+SELECT postit.id, createdate, headertext, bodytext, cssclass, username FROM postit, color, users WHERE color_id=color.id AND users_id=users.id;
 
 -- SQL til valg af farve
 SELECT id, colorname FROM color;
