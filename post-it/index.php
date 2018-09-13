@@ -57,7 +57,7 @@ require_once('util.php');
 			  			<div class="card-body zoom">
 							<div class="<?=$cssclass?>">
 								
-								<?php if($_SESSION['uid']==$uid){?>
+								<?php if($_SESSION['uid']==$uid || $_SESSION['uid']=='2'){?>
 								<form action="dodeletepostit.php" method="post" >
 									<input type="hidden" name="pid" value="<?=$pid?>">
 									<input type="image" src="pic/lillex.png" alt="Delete" class="slet-poster">

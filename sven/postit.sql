@@ -93,6 +93,8 @@ INSERT INTO color (colorname, cssclass) VALUES ('Orange', 'postitorange');
 INSERT INTO color (colorname, cssclass) VALUES ('Pink', 'postitpink');
 
 
+
+
 SELECT * FROM color;
 SELECT * FROM postit;
 SELECT * FROM users;
