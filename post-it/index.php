@@ -86,7 +86,7 @@
 
 	
 	<script src="https://code.jquery.com/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/popper.min.js" integrity="sha256-y/AvPAh9ai9k7R7EAGl8LCdqr1r+xYsmBoBMaYwpQFk=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 	<!-- custom script) --> 	
 	<script src="js/customjs.js"></script>	  
@@ -175,13 +175,13 @@
 					<h2>Create a PostIt</h2>
 					<form action="docreatepostit.php" method="post">
 						<div class="form-group">
-							<input type="text" name="headertext" placeholder="Overskrift" class="form-control form-control-lg textbox">
+							<input type="text" name="headertext" placeholder="Subject" class="form-control form-control-lg textbox">
 						</div>
 						<div class="form-group">
-							<textarea type="text" class="form-control form-control-lg textbox" name="bodytext" rows="3" placeholder="Skriv tekst"></textarea>
+							<textarea type="text" class="form-control form-control-lg textbox" name="bodytext" rows="3" placeholder="Write something"></textarea>
 						</div>
 						<div class="form-group">
-							<strong>Farve:</strong>
+							<strong>Colour:</strong>
 							<select name="colorid" required class="farveboks">
 						</div>
 						<?php
@@ -196,7 +196,7 @@
 							}
 						?>
 						</select>
-						<button type="submit" class="btn btn-primary opret-knap">Opret</button><br>
+						<button type="submit" class="btn btn-primary opret-knap">Post</button><br>
 					</form></div>
 				</fieldset>	
       			</div>
