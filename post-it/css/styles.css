@@ -229,40 +229,9 @@ h2{
 }
 }
 
-@media only screen and (max-width: 400px) {
-    body {
-        background-color: #FFFFFF;
-		font-family: 'Indie Flower', cursive;
-		display: flex;
-		flex-wrap: wrap;	
-    }
+@media only screen and (max-width: 576px) {
 	.opret-kasse{
-	align-content: center;
-	max-width: 200px;
-	max-height: 450px;
-	background: linear-gradient(0deg, #E1E719, #D7E16B);
-	border-radius: 10px;
-	box-shadow: 4px 6px 10px -4px black;
-	margin-top: 10%;
-	margin-left: 20%;
-}
-	.poster-kasse{
-	background-image: url(" pic/hvid.png");
-	background-repeat:no-repeat;
-	background-position:center;
-	margin-top: 1%;
 	width: 70%;
-	height: 900px;
-	display: flex;
-	flex-wrap: wrap;
-	padding: 150px;
-	padding-left: 30px;
-}
-	.zoom {
-    padding-left: 20px;
-    transition: transform .2s; /* Animation */
-}
-.zoom:hover {
-    transform: scale(1.0); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+	padding-right: 10%;
 }
 }
