@@ -25,7 +25,7 @@
     		<p>Press button below to either make a new post-it or register.</p>
 			<!-- Button trigger modal -->
 			<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal" id="modal-windows-one">Add Post-It</button>
-			<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#testModal" id="modal-windows-two">Profile</button><br><br><br>
+			<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#testModal" id="modal-windows-two">Profile</button><br><br>
 		</div>
   	</div>			
 	<!-- Header slut -->
@@ -137,7 +137,7 @@
 								if (isset($_SESSION['uid'])){ ?>	
 									<legend>Logged in as <?=$_SESSION['uname']?></legend>
 									<div class="form-group">
-										<button class="btn btn-danger reload" type="submit" name="cmd" value="logout">Logout</button>
+										<button class="btn btn-danger" type="submit" name="cmd" value="logout">Logout</button>
 									</div>
 							<?php } else { ?>
 								<legend>Login</legend>
@@ -146,8 +146,8 @@
 									<input class="form-control form-control-lg" type="password" name="pw" placeholder="Enter password" required>
 								</div>
 								<div class="form-group">
-									<button class="btn btn-primary reload" type="submit" name="cmd" value="login">Login</button>
-									<button class="btn btn-success reload" type="submit" name="cmd" value="createuser">Create</button>
+									<button class="btn btn-primary" type="submit" name="cmd" value="login">Login</button>
+									<button class="btn btn-success" type="submit" name="cmd" value="createuser">Create</button>
 								</div>
 							<?php } ?>
 						</fieldset>	
@@ -178,7 +178,7 @@
 							<input type="text" name="headertext" placeholder="Overskrift" class="form-control form-control-lg textbox">
 						</div>
 						<div class="form-group">
-							<textarea type="text" class="form-control form-control-lg textbox" name="bodytext" rows="3" placeholder="Brødtekst"></textarea>
+							<textarea type="text" class="form-control form-control-lg textbox" name="bodytext" rows="3" placeholder="Skriv tekst"></textarea>
 						</div>
 						<div class="form-group">
 							<strong>Farve:</strong>
@@ -196,7 +196,7 @@
 							}
 						?>
 						</select>
-						<button type="submit" class="btn btn-primary opret-knap reload">Opret</button><br>
+						<button type="submit" class="btn btn-primary opret-knap">Opret</button><br>
 					</form></div>
 				</fieldset>	
       			</div>
