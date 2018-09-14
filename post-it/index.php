@@ -8,7 +8,7 @@ require_once('util.php');
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bootstrap - Prebuilt Layout</title>
+<title>Your Post-It Wall</title>
 
 <!-- Bootstrap -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -139,13 +139,19 @@ require_once('util.php');
 <?php
 	if (isset($_SESSION['uid'])){ ?>	
 		<legend>Logged in as <?=$_SESSION['uname']?></legend>
-		<button type="submit" name="cmd" value="logout">Logout</button>
+		<div class="form-group">
+			<button class="btn btn-danger" type="submit" name="cmd" value="logout">Logout</button>
+		</div>
 <?php } else { ?>
 		<legend>Login</legend>
-		<input type="text" name="un" placeholder="Username" required>
-		<input type="password" name="pw" placeholder="Password" required>
-		<button type="submit" name="cmd" value="login">Login</button>
-		<button type="submit" name="cmd" value="createuser">Create</button>
+		<div class="form-group">
+			<input class="form-control form-control-lg" type="text" name="un" placeholder="Enter username" required>
+			<input class="form-control form-control-lg" type="password" name="pw" placeholder="Enter password" required>
+		</div>
+		<div class="form-group">
+			<button class="btn btn-primary" type="submit" name="cmd" value="login">Login</button>
+			<button class="btn btn-success" type="submit" name="cmd" value="createuser">Create</button>
+		</div>
 <?php } ?>
 	</fieldset>	
 </form>
@@ -169,14 +175,19 @@ require_once('util.php');
       </div>
       <div class="modal-body">
        <div class="opret-kasse">
-	<h1>Create new PostIt</h1>
+	<h2>Create a PostIt</h2>
 	
 	<form action="docreatepostit.php" method="post">
-		<input type="text" name="headertext" placeholder="Overskrift" class="textbox">
-		<input type="text" name="bodytext" placeholder="Brødtekst" class="textbox">
-		
-		Farve:
-		<select name="colorid" required class="farveboks">
+		<div class="form-group">
+			<input type="text" name="headertext" placeholder="Overskrift" class="form-control form-control-lg textbox">
+		</div>
+		<div class="form-group">
+			<textarea type="text" class="form-control form-control-lg textbox" name="bodytext" rows="3" placeholder="Brødtekst"></textarea>
+		</div>
+		<div class="form-group">
+			<strong>Farve:</strong>
+			<select name="colorid" required class="farveboks">
+		</div>
 		<?php
 			require_once('dbcon.php');
 			$sql = 'SELECT id, colorname FROM color';
@@ -189,11 +200,11 @@ require_once('util.php');
 			}
 		?>
 		</select>
-		<button type="submit" class="opret-knap">Opret</button><br>
+		<button type="submit" class="btn btn-primary opret-knap">Opret</button><br>
 	</form></div>
 	</fieldset>	
 </form>
-      </div>
+      </div><br>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>

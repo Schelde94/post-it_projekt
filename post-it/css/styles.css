@@ -81,34 +81,34 @@ time {
 	background: linear-gradient(135deg, #F4E575,#F9F0AF);
 	transform: rotate(0deg);
 	border-bottom-right-radius: 500px 10px;
-	box-shadow: 4px 6px 10px -4px black;
-	margin-top: 15%;
-	margin-left: 10%;	
+	box-shadow: 4px 6px 10px -4px black;	
 }
 .tekstbox{
-	margin-left: 40px;
 	border-radius: 5px;
 	max-width: 100%;
 	box-shadow: 2px 3px 5px -2px black;
-	font-family: 'Shadows Into Light', cursive;
-	font-family: 'Exo', sans-serif;
-	font-family: 'Ubuntu Condensed', sans-serif;	
+	border: none;
+	font-family: 'Indie Flower', cursive;	
 }
 .farveboks{
 	border-radius: 5px;
-	margin-left: 40px;
 	box-shadow: 2px 3px 5px -2px black;	
 }
 .opret-knap{
 	border-radius: 5px;
-	padding-right: 18px;
-	font-family: 'Shadows Into Light', cursive;
-	font-family: 'Exo', sans-serif;
-	font-family: 'Ubuntu Condensed', sans-serif;
+	font-family: 'Indie Flower', cursive;
+	float: right;
+}
+.form-group {
+	margin-right: 5px;
+	margin-left: 5px;
 }
 h3{
 	padding-top: 25px;
 	margin-left: 40px;
+}
+h2{
+	text-align: center;
 }
 .poster-kasse{
 	background-image: url(" pic/sdf.png");
