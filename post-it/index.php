@@ -17,27 +17,27 @@
 </head>
 <body>
 	<!-- Header -->
-	<div class="container-fluid">
-  		<div class="jumbotron jumbotron-fluid text-center">
-    		<h1 class="display-4">Your Post-It Wall</h1>
+  	<div class="jumbotron jumbotron-fluid text-center">
+		<div class="container-fluid">
+    		<br><h1 class="display-4">Your Post-It Wall</h1>
     		<p class="lead">Easily manage your notes!</p>
     		<hr class="my-4">
     		<p>Press button below to either make a new post-it or register.</p>
 			<!-- Button trigger modal -->
 			<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal" id="modal-windows-one">Add Post-It</button>
-			<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#testModal" id="modal-windows-two">Profile</button>
-  		</div>			
-	</div>
+			<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#testModal" id="modal-windows-two">Profile</button><br><br><br>
+		</div>
+  	</div>			
 	<!-- Header slut -->
 	<!-- Lille text felt under header -->
 	<div class="container">
+		<br>
   		<div class="row text-center">
     		<div class="col-lg-6 offset-lg-3">See all post-it notes below. <br>
       		<strong>Login</strong> to edit your own post-it notes.</div>
   		</div>
 	</div>
 	<!-- Lille text felt under header slut -->
-  	<br>
   	<hr>
   	<br>
   	<div class="container-fluid">

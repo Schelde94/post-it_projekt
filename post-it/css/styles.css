@@ -47,6 +47,10 @@ body.modal-open div.modal-backdrop {
 body {
 	font-family: 'Indie Flower', cursive;
 }
+.jumbotron {
+	margin: 0;
+	padding: 0;
+}
 .postit {
 	margin: 20px;
 	width: 300px;
