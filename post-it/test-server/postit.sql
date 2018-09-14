@@ -21,13 +21,13 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema pms
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `pms` DEFAULT CHARACTER SET latin1 ;
-USE `pms` ;
+CREATE SCHEMA IF NOT EXISTS `magnusmultimedia.dk.mysql` DEFAULT CHARACTER SET latin1 ;
+USE `magnusmultimedia.dk.mysql` ;
 
 -- -----------------------------------------------------
 -- Table `pms`.`color`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `pms`.`color` (
+CREATE TABLE IF NOT EXISTS `magnusmultimedia.dk.mysql`.`color` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `colorname` VARCHAR(45) NULL DEFAULT NULL,
   `cssclass` VARCHAR(45) NULL DEFAULT NULL,
@@ -40,7 +40,7 @@ DEFAULT CHARACTER SET = latin1;
 -- -----------------------------------------------------
 -- Table `pms`.`users`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `pms`.`users` (
+CREATE TABLE IF NOT EXISTS `magnusmultimedia.dk.mysql`.`users` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `username` VARCHAR(40) NULL DEFAULT NULL,
   `pwhash` VARCHAR(255) NULL DEFAULT NULL,
@@ -54,7 +54,7 @@ DEFAULT CHARACTER SET = latin1;
 -- -----------------------------------------------------
 -- Table `pms`.`postit`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `pms`.`postit` (
+CREATE TABLE IF NOT EXISTS `magnusmultimedia.dk.mysql`.`postit` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `createdate` DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
   `headertext` VARCHAR(45) NULL DEFAULT NULL,
@@ -66,12 +66,12 @@ CREATE TABLE IF NOT EXISTS `pms`.`postit` (
   INDEX `fk_postit_users1_idx` (`users_id` ASC) ,
   CONSTRAINT `fk_postit_color`
     FOREIGN KEY (`color_id`)
-    REFERENCES `pms`.`color` (`id`)
+    REFERENCES `magnusmultimedia.dk.mysql`.`color` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_postit_users1`
     FOREIGN KEY (`users_id`)
-    REFERENCES `pms`.`users` (`id`)
+    REFERENCES `magnusmultimedia.dk.mysql`.`users` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
