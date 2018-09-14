@@ -76,6 +76,24 @@ require_once('util.php');
   		</div>
 	<!--Posters kasse slut-->
 
+<br>
+  <hr>
+  <div class="row">
+    <div class="text-center col-lg-6 offset-lg-3">
+      <h4>Your Post-It Wall </h4>
+      <p>Copyright &copy; 2018 &middot; All Rights Reserved &middot; <a href="#" >PMS</a></p>
+    </div>
+  </div>
+</div>
+
+	
+<script src="https://code.jquery.com/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/popper.min.js" integrity="sha256-y/AvPAh9ai9k7R7EAGl8LCdqr1r+xYsmBoBMaYwpQFk=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<!-- custom script) --> 	
+<script src="js/customjs.js"></script>	  
+	  
+	  
 <!-- Login Modal  Modal -->
 <div class="modal fade" id="testModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -194,24 +212,6 @@ require_once('util.php');
   </div>
 </div>
 <!-- Add post it END -->
-	
- <br>
-  <hr>
-  <div class="row">
-    <div class="text-center col-lg-6 offset-lg-3">
-      <h4>Your Post-It Wall </h4>
-      <p>Copyright &copy; 2018 &middot; All Rights Reserved &middot; <a href="#" >PMS</a></p>
-    </div>
-  </div>
-</div>
-
-	
-<script src="https://code.jquery.com/jquery.min.js"></script>
-<script src="js/jquery-custom.js"></script>	
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/popper.min.js" integrity="sha256-y/AvPAh9ai9k7R7EAGl8LCdqr1r+xYsmBoBMaYwpQFk=" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-<!-- custom script) --> 	
-<script src="js/customjs.js"></script>
 
 	
 </body>
