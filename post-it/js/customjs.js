@@ -22,3 +22,7 @@ $('#exampleModal').on('show.bs.modal', function (event) {
   modal.find('.modal-title').text('Login / Register ');
   modal.find('.modal-body input').val(recipient);
 });
+
+$(document).on('click', '#reload' > function() {
+    window.location.reload(true);
+});

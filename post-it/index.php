@@ -75,25 +75,7 @@ require_once('util.php');
 				} ?>
   		</div>
 	<!--Posters kasse slut-->
-  <br>
-  <hr>
-  <div class="row">
-    <div class="text-center col-lg-6 offset-lg-3">
-      <h4>Your Post-It Wall </h4>
-      <p>Copyright &copy; 2018 &middot; All Rights Reserved &middot; <a href="#" >PMS</a></p>
-    </div>
-  </div>
-</div>
-
-	
-<script src="https://code.jquery.com/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/popper.min.js" integrity="sha256-y/AvPAh9ai9k7R7EAGl8LCdqr1r+xYsmBoBMaYwpQFk=" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-<!-- custom script) --> 	
-<script src="js/customjs.js"></script>
-
-
-	
+ 
 <!-- Login Modal  Modal -->
 <div class="modal fade" id="testModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -140,7 +122,7 @@ require_once('util.php');
 	if (isset($_SESSION['uid'])){ ?>	
 		<legend>Logged in as <?=$_SESSION['uname']?></legend>
 		<div class="form-group">
-			<button class="btn btn-danger" type="submit" name="cmd" value="logout" onclick="location.reload(true);">Logout</button>
+			<button class="btn btn-danger" id="reload" type="submit" name="cmd" value="logout">Logout</button>
 		</div>
 <?php } else { ?>
 		<legend>Login</legend>
@@ -149,8 +131,8 @@ require_once('util.php');
 			<input class="form-control form-control-lg" type="password" name="pw" placeholder="Enter password" required>
 		</div>
 		<div class="form-group">
-			<button class="btn btn-primary" type="submit" name="cmd" value="login">Login</button>
-			<button class="btn btn-success" type="submit" name="cmd" value="createuser">Create</button>
+			<button class="btn btn-primary" id="reload" type="submit" name="cmd" value="login">Login</button>
+			<button class="btn btn-success" id="reload" type="submit" name="cmd" value="createuser">Create</button>
 		</div>
 <?php } ?>
 	</fieldset>	
@@ -200,7 +182,7 @@ require_once('util.php');
 			}
 		?>
 		</select>
-		<button type="submit" class="btn btn-primary opret-knap" value="RELOAD" onclick="location.reload(true);">Opret</button><br>
+		<button type="submit" class="btn btn-primary opret-knap" id="reload">Opret</button><br>
 	</form></div>
 	</fieldset>	
 </form>
@@ -212,5 +194,25 @@ require_once('util.php');
   </div>
 </div>
 <!-- Add post it END -->
+	
+ <br>
+  <hr>
+  <div class="row">
+    <div class="text-center col-lg-6 offset-lg-3">
+      <h4>Your Post-It Wall </h4>
+      <p>Copyright &copy; 2018 &middot; All Rights Reserved &middot; <a href="#" >PMS</a></p>
+    </div>
+  </div>
+</div>
+
+	
+<script src="https://code.jquery.com/jquery.min.js"></script>
+<script src="js/jquery-custom.js"></script>	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/popper.min.js" integrity="sha256-y/AvPAh9ai9k7R7EAGl8LCdqr1r+xYsmBoBMaYwpQFk=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<!-- custom script) --> 	
+<script src="js/customjs.js"></script>
+
+	
 </body>
 </html>
