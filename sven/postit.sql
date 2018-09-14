@@ -86,10 +86,10 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 
 -- Add color info to the color table
-INSERT INTO color (colorname, cssclass) VALUES ('Yellow', 'postityellow');
-INSERT INTO color (colorname, cssclass) VALUES ('Blue', 'postitblue');
-INSERT INTO color (colorname, cssclass) VALUES ('Green', 'postitgreen');
-INSERT INTO color (colorname, cssclass) VALUES ('Red', 'postitred');
+INSERT INTO color (colorname, cssclass) VALUES ('Gul', 'postityellow');
+INSERT INTO color (colorname, cssclass) VALUES ('Blå', 'postitblue');
+INSERT INTO color (colorname, cssclass) VALUES ('Grøn', 'postitgreen');
+INSERT INTO color (colorname, cssclass) VALUES ('Rød', 'postitred');
 
 
 
