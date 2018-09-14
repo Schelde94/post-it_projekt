@@ -75,7 +75,7 @@ require_once('util.php');
 				} ?>
   		</div>
 	<!--Posters kasse slut-->
- 
+
 <!-- Login Modal  Modal -->
 <div class="modal fade" id="testModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -122,7 +122,7 @@ require_once('util.php');
 	if (isset($_SESSION['uid'])){ ?>	
 		<legend>Logged in as <?=$_SESSION['uname']?></legend>
 		<div class="form-group">
-			<button class="btn btn-danger" id="reload" type="submit" name="cmd" value="logout">Logout</button>
+			<button class="btn btn-danger" id="reload" type="submit" name="cmd" value="logout" onclick="location.reload(true);">Logout</button>
 		</div>
 <?php } else { ?>
 		<legend>Login</legend>
