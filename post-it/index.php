@@ -200,7 +200,7 @@ require_once('util.php');
 			}
 		?>
 		</select>
-		<button type="submit" class="btn btn-primary opret-knap">Opret</button><br>
+		<button type="submit" class="btn btn-primary opret-knap" value="RELOAD" onclick="location.reload(true);">Opret</button><br>
 	</form></div>
 	</fieldset>	
 </form>
