@@ -140,7 +140,7 @@ require_once('util.php');
 	if (isset($_SESSION['uid'])){ ?>	
 		<legend>Logged in as <?=$_SESSION['uname']?></legend>
 		<div class="form-group">
-			<button class="btn btn-danger" type="submit" name="cmd" value="logout">Logout</button>
+			<button class="btn btn-danger" type="submit" name="cmd" value="logout" onclick="location.reload(true);">Logout</button>
 		</div>
 <?php } else { ?>
 		<legend>Login</legend>
