@@ -22,7 +22,3 @@ $('#exampleModal').on('show.bs.modal', function (event) {
   modal.find('.modal-title').text('Add Post-It');
   modal.find('.modal-body input').val(recipient);
 });
-
-$(document).on('click', '.reload' > function() {
-    window.location.reload(true);
-});
